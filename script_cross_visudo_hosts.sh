@@ -38,3 +38,5 @@ generar_clave_ssh $VM2_IP
 echo "Cruzando claves SSH entre $VM1_IP y $VM2_IP..."
 copiar_clave $VM1_IP $VM2_IP
 copiar_clave $VM2_IP $VM1_IP
+
+sshpass -p "$VM_PASS" ssh-copy-id -i ~/.ssh/id_rsa.pub $VM_USER@$VM1_IP
