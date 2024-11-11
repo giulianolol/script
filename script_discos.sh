@@ -61,4 +61,5 @@ sudo swapon /dev/vg_temp/lv_swap
 echo "/dev/vg_datos/lv_docker /var/lib/docker ext4 defaults 0 0" | sudo tee -a /etc/fstab
 echo "/dev/vg_datos/lv_workareas /work ext4 defaults 0 0" | sudo tee -a /etc/fstab
 echo "/dev/vg_temp/lv_swap none swap sw 0 0" | sudo tee -a /etc/fstab
-sudo mount -a
+echo "sudo mount -a" | sudo tee -a /etc/fstab
+
