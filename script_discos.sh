@@ -35,9 +35,6 @@ EOF
 sudo fdisk /dev/sdc < comandos_fdisk.txt
 sudo fdisk /dev/sdd < comandos_fdisk_sdd.txt
 
-sudo mkswap /dev/sde
-sudo swapon /dev/sde
-
 sudo pvcreate /dev/sdc1
 sudo pvcreate /dev/sdc2
 sudo pvcreate /dev/sdd1
@@ -52,6 +49,13 @@ sudo lvcreate -L +2.5GB -n lv_swap vg_temp
 sudo mkfs.ext4 /dev/vg_datos/lv_docker
 sudo mkdir -p /var/lib/docker
 sudo mount /dev/vg_datos/lv_docker /var/lib/docker
+
+
+sudo mkswap /dev/vg_temp/lv_swap
+sudo mkswap /dev/sde
+sudo swapon /dev/sde
+sudo swapon /dev/vg_temp/lv_swap
+
 
 sudo mkfs.ext4 /dev/vg_datos/lv_workareas
 sudo mkdir -p /work
