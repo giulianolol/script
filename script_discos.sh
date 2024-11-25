@@ -31,21 +31,9 @@ t
 
 w
 EOF
-cat > comandos_fdisk_swap.txt <<EOF
-n
-p
-
-
-+2.5GB
-t
-8e
-
-w
-EOF
 
 sudo fdisk /dev/sdc < comandos_fdisk.txt
 sudo fdisk /dev/sdd < comandos_fdisk_sdd.txt
-sudo fdisk /dev/sde < comandos_fdisk_swap.txt
 
 sudo mkswap /dev/sde
 sudo swapon /dev/sde
