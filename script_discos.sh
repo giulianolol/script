@@ -32,6 +32,15 @@ t
 w
 EOF
 
+cat > comandos_disk_swap.txt <<EOF
+n
+p
+
+
++1GB
+w
+EOF
+
 sudo fdisk /dev/sdc < comandos_fdisk.txt
 sudo fdisk /dev/sdd < comandos_fdisk_sdd.txt
 
@@ -52,8 +61,8 @@ sudo mount /dev/vg_datos/lv_docker /var/lib/docker
 
 
 sudo mkswap /dev/vg_temp/lv_swap
-sudo mkswap /dev/sde
-sudo swapon /dev/sde
+sudo mkswap /dev/sde1
+sudo swapon /dev/sde1
 sudo swapon /dev/vg_temp/lv_swap
 
 
