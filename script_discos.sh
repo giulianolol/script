@@ -61,10 +61,10 @@ sudo mkdir -p /var/lib/docker
 sudo mount /dev/vg_datos/lv_docker /var/lib/docker
 
 
-sudo mkswap /dev/vg_temp/lv_swap
+#sudo mkswap /dev/vg_temp/lv_swap
 sudo mkswap /dev/sde1
 sudo swapon /dev/sde1
-sudo swapon /dev/vg_temp/lv_swap
+#sudo swapon /dev/vg_temp/lv_swap
 
 
 sudo mkfs.ext4 /dev/vg_datos/lv_workareas
