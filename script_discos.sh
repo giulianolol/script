@@ -43,6 +43,7 @@ EOF
 
 sudo fdisk /dev/sdc < comandos_fdisk.txt
 sudo fdisk /dev/sdd < comandos_fdisk_sdd.txt
+sudo fdisk /dev/sde < comandos_fdisk_swap.txt
 
 sudo pvcreate /dev/sdc1
 sudo pvcreate /dev/sdc2
